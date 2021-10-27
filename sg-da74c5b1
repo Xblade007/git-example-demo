@@ -1,0 +1,58 @@
+{
+    "eventVersion": "1.08",
+    "userIdentity": {
+        "type": "Root",
+        "principalId": "345864560338",
+        "arn": "arn:aws:iam::345864560338:root",
+        "accountId": "345864560338",
+        "accessKeyId": "ASIAVBBZCL3JOJA3XE62",
+        "sessionContext": {
+            "sessionIssuer": {},
+            "webIdFederationData": {},
+            "attributes": {
+                "mfaAuthenticated": "true",
+                "creationDate": "2021-05-07T09:52:17Z"
+            }
+        }
+    },
+    "eventTime": "2021-05-07T11:00:59Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "AuthorizeSecurityGroupIngress",
+    "awsRegion": "ap-south-1",
+    "sourceIPAddress": "157.36.33.137",
+    "userAgent": "console.ec2.amazonaws.com",
+    "requestParameters": {
+        "groupId": "sg-da74c5b1",
+        "ipPermissions": {
+            "items": [
+                {
+                    "ipProtocol": "tcp",
+                    "fromPort": 80,
+                    "toPort": 80,
+                    "groups": {},
+                    "ipRanges": {
+                        "items": [
+                            {
+                                "cidrIp": "10.0.2.248/32",
+                                "description": "e-NDS"
+                            }
+                        ]
+                    },
+                    "ipv6Ranges": {},
+                    "prefixListIds": {}
+                }
+            ]
+        }
+    },
+    "responseElements": {
+        "requestId": "64d4b039-2036-4c8a-a0f2-07f53be71cfc",
+        "_return": true
+    },
+    "requestID": "64d4b039-2036-4c8a-a0f2-07f53be71cfc",
+    "eventID": "5531963a-8bfe-4ee7-92c7-b007d3e4bd50",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "eventCategory": "Management",
+    "recipientAccountId": "345864560338"
+}
