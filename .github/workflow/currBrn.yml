@@ -1,0 +1,14 @@
+name: build
+
+on: push
+
+jobs:
+  dummy-fake:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Verify run id
+        run : echo Run Id $GITHUB_RUN_ID 
+      - name: Output the branch name
+        run: echo $(echo $GITHUB_REF | cut -d'/' -f 3)
