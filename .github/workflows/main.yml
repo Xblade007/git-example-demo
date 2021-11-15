@@ -1,7 +1,8 @@
+name: CI
 on: push
 jobs:
-  my-job:
+  prod-check:
+    if: ${{ github.ref == 'refs/heads/demo-pipeline' }}
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Deploying to production server on branch $GITHUB_REF"
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
