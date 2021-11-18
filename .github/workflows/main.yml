@@ -7,10 +7,10 @@ jobs:
     steps:
     - name: Dump GitHub context
       env:
-        GITHUB_CONTEXT:  $(echo ${{ toJson(github.ref)}} | awk '{print $3}')
+        GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
         
       run: |
-        echo "$GITHUB_CONTEXT"
+        echo  ${{ $GITHUB_CONTEXT| awk '{print $3}')
        
         
  
