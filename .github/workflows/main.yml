@@ -5,7 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-    - name: Checkout source code
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
-        echo ${{ WEBHOOK_URL }}
+        echo "$GITHUB_CONTEXT"
