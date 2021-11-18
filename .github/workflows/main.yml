@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
-      env:
+      env: |
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
-        
+        GIT: ${{ $GITHUB_CONTEXT| awk '{print $3}')
       run: |
-        echo  ${{ $GITHUB_CONTEXT| awk '{print $3}')
+        echo  $GIT
        
         
  
