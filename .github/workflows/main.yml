@@ -1,6 +1,6 @@
 name: Deploy master
 on:
-  create
+  [create, push]
 jobs:
   build:
     runs-on: ubuntu-latest
