@@ -8,5 +8,4 @@ jobs:
 
     - name: Checkout source code
       run: |
-        $webhookres='$'
         echo $webhookres
