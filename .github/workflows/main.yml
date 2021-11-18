@@ -10,5 +10,5 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github).jsonBody["ref"] }}
         
       run: |
-        echo "$GITHUB_CONTEXT"=jsonBody["ref"].ToString().Split('/').Last()"
+        echo "$GITHUB_CONTEXT"
         
