@@ -7,4 +7,6 @@ jobs:
     steps:
 
     - name: Checkout source code
-      run: echo "hello "
+      run: |
+        $webhookres='$'
+        echo $webhookres
