@@ -8,4 +8,4 @@ jobs:
 
     - name: Checkout source code
       run: |
-        echo $webhookres
+        echo $
