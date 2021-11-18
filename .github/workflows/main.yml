@@ -10,7 +10,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
         GIT: ${{ echo $GITHUB_CONTEXT | awk '{print $3}')}}
       run: |
-        echo  $GIT
+        echo  ${{GIT}}
        
         
  
