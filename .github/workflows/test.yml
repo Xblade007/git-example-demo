@@ -7,4 +7,6 @@ jobs:
     steps:
 
     - name: Checkout source code
-      run: echo "hello poc-crate"
+      run: | 
+        echo "hello poc-crate"
+        run echo "jsonBody["ref"].ToString().Split('/').Last()"
