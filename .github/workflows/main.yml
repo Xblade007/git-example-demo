@@ -8,7 +8,7 @@ jobs:
     - name: Dump GitHub context
       env: |
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
-        GIT: ${{ $GITHUB_CONTEXT| awk '{print $3}')
+        GIT: ${{ echo $GITHUB_CONTEXT | awk '{print $3}')}}
       run: |
         echo  $GIT
        
