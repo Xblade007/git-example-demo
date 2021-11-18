@@ -9,8 +9,8 @@ jobs:
       env: 
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
     - uses: nelonoel/branch-name@v1
-    # Use branch name for whatever purpose
-    - run: echo ${BRANCH_NAME}
+    - run: 
+        echo ${BRANCH_NAME}
       
         
  
