@@ -10,7 +10,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
     - uses: nelonoel/branch-name@v1
     - run: 
-        echo ${BRANCH_NAME}
+        echo running on branch ${GITHUB_REF##*/}
       
         
  
