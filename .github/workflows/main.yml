@@ -8,4 +8,4 @@ jobs:
 
     - name: Checkout source code
       run: |
-        echo $
+        echo ${{ secrets.WEBHOOK_URL }}
