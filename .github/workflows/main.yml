@@ -8,9 +8,8 @@ jobs:
     - name: Dump GitHub context
       env: 
         GITHUB_CONTEXT: ${{ toJson(github.ref)}} 
-    - uses: nelonoel/branch-name@v1
-    - run: 
-        echo running on branch ${GITHUB_REF##*/}
+      run: echo ${GITHUB_REF##*/}
+        
       
         
  
