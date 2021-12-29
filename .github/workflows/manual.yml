@@ -36,7 +36,8 @@ jobs:
       run: |
           echo "GIT_SHA=${GIT_SHA}"
           echo "GIT_BRANCH=${GIT_BRANCH}"
-          https://github.com/Xblade007/springboot.git
+          git clone https://github.com/Xblade007/springboot.git
+          cd springboot
           git branch -a
      
       
