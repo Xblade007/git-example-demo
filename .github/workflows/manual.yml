@@ -27,6 +27,26 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: Test
+      run: |
+          cat <<EOF > $HOME/subscript.sh
+          #!/bin/sh
+          exit 1
+          EOF
+          chmod +x $HOME/subscript.sh
+          
+          cat <<EOF > test.sh
+          #!/bin/bash
+          $HOME/subscript.sh
+          if [ $? -ne 0 ]; then
+              echo PASS
+          fi;
+          EOF
+          
+          chmod +x ./test.sh
+          echo START
+          source ./test.sh || true
+          echo END
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
