@@ -30,6 +30,6 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
-        echo "${{git branch -l}}"
+        echo "GIT_BRANCH=${GIT_BRANCH}"
      
       
