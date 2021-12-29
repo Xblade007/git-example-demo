@@ -42,5 +42,8 @@ jobs:
           >file.txt
           echo $allbranch
           if [ $currbranch = $allbranch  ]; then echo 'Equal'; else echo 'Incorrect branch name '; fi
+          mainbranch=$(git rev-parse --abbrev-ref HEAD)
+          echo $mainbranch
+          echo Finished!
 
 
