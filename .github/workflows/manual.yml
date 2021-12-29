@@ -36,6 +36,6 @@ jobs:
       run: |
           echo "GIT_SHA=${GIT_SHA}"
           echo "GIT_BRANCH=${GIT_BRANCH}"
-          echo $(git branch)
+          echo $(git for-each-ref refs/heads/)
      
       
