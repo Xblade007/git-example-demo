@@ -23,16 +23,13 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
     - name: Send greeting
+      env: 
+         mybranch: ${{github.event.inputs.name}}
       run: |
-        echo "Hello ${{ github.event.inputs.name }}"
-    - name: cloning and checking coondition
-      run: |
-          git clone https://github.com/Xblade007/git-example-demo.git
+        git clone https://github.com/Xblade007/git-example-demo.git
           cd git-example-demo
           currbranch=${{github.event.inputs.name}}
           echo $currbranch
@@ -41,13 +38,9 @@ jobs:
           allbranch=$(grep -i $currbranch nospacefile.txt )
           >file.txt
           echo $allbranch
-          if [[ $currbranch != $allbranch ]] 
-            then echo 'Not Equal' ;
-          else echo 'Equal branch name'
-          fi
-          shell: bash
-          mainbranch=$(git rev-parse --abbrev-ref HEAD)
-          echo $mainbranch
-          echo Finished!
-
+        - name: 
+          if: ${{ currbranch == allbranch }}
+          run: echo "true"
+      
+      
 
