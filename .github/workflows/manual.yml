@@ -42,7 +42,7 @@ jobs:
           >file.txt
           echo $allbranch
           if [[ $currbranch != $allbranch ]]; 
-            then echo 'Not Equal' break ;
+            then echo 'Not Equal' ;
           else echo 'Equal branch name'
           fi
           shell: bash
