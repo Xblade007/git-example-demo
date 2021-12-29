@@ -39,6 +39,7 @@ jobs:
           git branch -a | sed 's/remotes.\origin.//' >>file.txt
           sed 's/ //g' file.txt > nospacefile.txt
           allbranch=$(grep -i $currbranch nospacefile.txt )
+          >file.txt
           echo $allbranch
           if [ $currbranch = $allbranch  ]; then echo 'Equal'; else echo 'Incorrect branch name '; fi
 
