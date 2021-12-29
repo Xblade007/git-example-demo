@@ -36,6 +36,7 @@ jobs:
       run: |
           echo "GIT_SHA=${GIT_SHA}"
           echo "GIT_BRANCH=${GIT_BRANCH}"
-          echo $(git for-each-ref refs/heads/)
+          git clone -b https://github.com/Xblade007/git-example-demo.git
+          git branch
      
       
