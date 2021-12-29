@@ -41,7 +41,11 @@ jobs:
           allbranch=$(grep -i $currbranch nospacefile.txt )
           >file.txt
           echo $allbranch
-          if [ $currbranch != $allbranch  ]; then echo 'Not Equal' break ; else echo 'Equal branch name'  fi
+          if [[ $currbranch != $allbranch ]]; 
+            then echo 'Not Equal' break ;
+          else echo 'Equal branch name'
+          fi
+          shell: bash
           mainbranch=$(git rev-parse --abbrev-ref HEAD)
           echo $mainbranch
           echo Finished!
