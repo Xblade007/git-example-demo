@@ -31,10 +31,11 @@ jobs:
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
         echo "GIT_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
-          echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+        echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
     - name: Use environment variables
       run: |
           echo "GIT_SHA=${GIT_SHA}"
           echo "GIT_BRANCH=${GIT_BRANCH}"
+          echo "${GITHUB_REF##*/}"
      
       
