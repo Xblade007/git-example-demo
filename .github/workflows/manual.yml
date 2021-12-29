@@ -34,10 +34,12 @@ jobs:
         echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
     - name: Use environment variables
       run: |
-          echo "GIT_SHA=${GIT_SHA}"
-          echo "GIT_BRANCH=${GIT_BRANCH}"
-          git clone https://github.com/Xblade007/springboot.git
-          cd springboot
-          git branch -a
-     
-      
+          git clone https://github.com/Xblade007/git-example-demo.git
+          cd git-example-demo
+          currbranch=${{github.event.inputs.name}}
+          git branch -a | sed 's/remotes.\origin.//' >>file.txt
+          sed 's/ //g' file.txt > nospacefile.txt
+          allbranch=$(grep -i $currbranch nospacefile.txt )
+          if [ $currbranch = $allbranch  ]; then echo 'Equal'; else echo 'Incorrect branch name '; fi
+
+
