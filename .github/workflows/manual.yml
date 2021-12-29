@@ -35,9 +35,11 @@ jobs:
           git clone -b ${{ github.event.inputs.name }} https://github.com/Xblade007/git-example-demo.git
           cd git-example-demo
           currbranch=${{github.event.inputs.name}}
+          echo $currbranch
           git branch -a | sed 's/remotes.\origin.//' >>file.txt
           sed 's/ //g' file.txt > nospacefile.txt
           allbranch=$(grep -i $currbranch nospacefile.txt )
+          echo $allbranch
           if [ $currbranch = $allbranch  ]; then echo 'Equal'; else echo 'Incorrect branch name '; fi
 
 
