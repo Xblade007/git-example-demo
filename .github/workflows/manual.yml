@@ -30,11 +30,9 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
-        echo "GIT_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
-        echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-    - name: Use environment variables
+    - name: cloning and checking coondition
       run: |
-          git clone https://github.com/Xblade007/git-example-demo.git
+          git clone -b ${{ github.event.inputs.name }}" https://github.com/Xblade007/git-example-demo.git
           cd git-example-demo
           currbranch=${{github.event.inputs.name}}
           git branch -a | sed 's/remotes.\origin.//' >>file.txt
